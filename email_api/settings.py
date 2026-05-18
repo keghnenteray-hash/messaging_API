@@ -92,13 +92,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 CONTACT_RECIPIENT_EMAIL = os.environ.get('CONTACT_RECIPIENT_EMAIL', EMAIL_HOST_USER)
 
 # ── CORS ────────────────────────────────────────────────────────────────────
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'http://127.0.0.1:5500',
-    'http://127.0.0.1:49214',
-    'null',
-]
-
+CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', '').split(',')
 
 # ── DRF ─────────────────────────────────────────────────────────────────────
 REST_FRAMEWORK = {
